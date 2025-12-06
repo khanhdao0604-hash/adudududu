@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPBD Dad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* CẤU HÌNH CƠ BẢN */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #0a0a0a; /* Đen tuyền */
+            color: #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif; /* Font kiểu La Mã, mạnh mẽ */
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+        
+        .gold-text { color: #d4af37; } /* Màu vàng kim loại sang trọng */
+
+        /* HIỆU ỨNG PARALLAX (Tạo chiều sâu 3D) */
+        .parallax {
+            height: 100vh; /* Full màn hình */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* LỚP PHỦ ĐEN (Để chữ dễ đọc hơn trên ảnh) */
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Độ tối 60% */
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        /* CÁC PHÂN ĐOẠN */
+        /* Thay ảnh của ba bạn vào các đường link bên dưới */
+        .bg-1 { background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop'); }
+        .bg-2 { background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2000&auto=format&fit=crop'); }
+        .bg-3 { background-image: url('https://images.pexels.com/photos/1793037/pexels-photo-1793037.jpeg?_gl=1*1ie3kp9*_ga*Mjc3NTUwMjQ0LjE3NDIwNTIzMzU.*_ga_8JE65Q40S6*czE3NjUwMzU1MzckbzMkZzEkdDE3NjUwMzU1NTEkajQ2JGwwJGgw'); }
+
+        .section-text {
+            height: 60vh;
+            background-color: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* CỠ CHỮ */
+        .big-text { font-size: 4rem; font-weight: 700; margin-bottom: 20px; }
+        .sub-text { font-size: 1.2rem; font-weight: 300; opacity: 0.8; letter-spacing: 3px;}
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .big-text { font-size: 2.5rem; }
+            .parallax { background-attachment: scroll; } /* Mobile không hỗ trợ fixed tốt nên tắt */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parallax bg-1">
+        <div class="overlay"></div>
+        <div class="content" data-aos="fade-up" data-aos-duration="2000">
+            <p class="sub-text">HÔM NAY LÀ NGÀY CỦA</p>
+            <h1 class="big-text gold-text">NGƯỜI ĐÀN ÔNG<br>TRỤ CỘT</h1>
+        </div>
+    </div>
+
+    <div class="section-text">
+        <div data-aos="fade-up" data-aos-duration="1500">
+            <h2 style="font-size: 2rem; margin-bottom: 15px;">VỮNG CHÃI, TRẦM ỔN.</h2>
+            <p style="max-width: 600px; margin: 0 auto; line-height: 1.6;">
+                Không cần nói nhiều.<br>Hành động luôn lớn hơn lời nói.
+            </p>
+        </div>
+    </div>
+
+    <div class="parallax bg-2">
+        <div class="overlay"></div>
+        <div class="content" data-aos="zoom-in" data-aos-duration="2000">
+            <h1 class="big-text">BẢN LĨNH</h1>
+            <p class="sub-text">LÀ THƯỚC ĐO CỦA MỘT NGƯỜI CHA</p>
+        </div>
+    </div>
+
+    <div class="section-text" style="height: 50vh;">
+        <div data-aos="fade-up">
+            <h2 class="gold-text" style="font-size: 3rem;">CHÚC MỪNG SINH NHẬT BA</h2>
+            <br>
+            <p style="font-size: 1.5rem; letter-spacing: 2px;">TUỔI MỚI - SỨC KHỎE - BÌNH AN</p>
+        </div>
+    </div>
+
+    <div class="parallax bg-3">
+        <div class="overlay"></div>
+        <div class="content" data-aos="fade-up" data-aos-duration="3000">
+            <h1 class="big-text" style="font-size: 5rem;">THANKS.</h1>
+            <p class="sub-text" style="margin-top: 20px;">FOR ALL.</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Kích hoạt hiệu ứng khi cuộn trang
+        AOS.init({
+            once: false, // Hiệu ứng lặp lại mỗi khi cuộn tới
+            offset: 200, // Kích hoạt sớm hay muộn
+        });
+    </script>
+</body>
+</html>
